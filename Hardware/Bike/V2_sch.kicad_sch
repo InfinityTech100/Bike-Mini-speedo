@@ -2113,6 +2113,151 @@
 				)
 			)
 		)
+		(symbol "Switch:SW_Push"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Switch:SW_SPST"
 			(pin_names
 				(offset 0) hide)
@@ -2464,16 +2609,16 @@
 		)
 	)
 	(junction
-		(at 158.75 110.49)
+		(at 158.75 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "059cf880-9021-4ab1-a955-4c710a4bd354")
 	)
 	(junction
-		(at 158.75 137.16)
+		(at 158.75 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "47ebffcb-316e-4f23-9c5b-29f521779469")
+		(uuid "402cf15a-8dbc-4ec6-823c-b997c0719d10")
 	)
 	(junction
 		(at 125.73 55.88)
@@ -2482,13 +2627,13 @@
 		(uuid "4c028b89-f3a5-4498-9e79-24952b079597")
 	)
 	(junction
-		(at 158.75 128.27)
+		(at 158.75 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8d692b60-4e57-4166-9d03-859d2568a3c2")
 	)
 	(junction
-		(at 158.75 119.38)
+		(at 158.75 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b3c6cf82-d5d9-4dea-914c-39dc40b012c9")
@@ -2517,7 +2662,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 144.78) (xy 158.75 137.16)
+			(xy 158.75 142.24) (xy 158.75 134.62)
 		)
 		(stroke
 			(width 0)
@@ -2527,13 +2672,13 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 137.16) (xy 158.75 137.16)
+			(xy 153.67 134.62) (xy 158.75 134.62)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0ea04a17-cc79-43a5-80ae-db6632278db7")
+		(uuid "0ec6c096-7ceb-490b-bdeb-3ed95d6bfcf0")
 	)
 	(bus
 		(pts
@@ -2547,7 +2692,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 110.49) (xy 158.75 110.49)
+			(xy 153.67 107.95) (xy 158.75 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2587,6 +2732,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 134.62) (xy 63.5 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38300478-de24-4bcd-a1c1-e72ccba4f801")
+	)
+	(wire
+		(pts
 			(xy 86.36 95.25) (xy 78.74 95.25)
 		)
 		(stroke
@@ -2617,7 +2772,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 119.38) (xy 162.56 119.38)
+			(xy 158.75 116.84) (xy 160.02 116.84)
 		)
 		(stroke
 			(width 0)
@@ -2647,7 +2802,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 101.6) (xy 158.75 110.49)
+			(xy 158.75 99.06) (xy 158.75 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2707,7 +2862,7 @@
 	)
 	(bus
 		(pts
-			(xy 166.37 171.45) (xy 124.46 171.45)
+			(xy 171.45 171.45) (xy 124.46 171.45)
 		)
 		(stroke
 			(width 0)
@@ -2787,7 +2942,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 101.6) (xy 158.75 101.6)
+			(xy 153.67 99.06) (xy 158.75 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2824,6 +2979,16 @@
 			(type default)
 		)
 		(uuid "a8957fa8-f328-4223-ab1a-245fb596564e")
+	)
+	(wire
+		(pts
+			(xy 86.36 85.09) (xy 78.74 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8cc1270-9f64-4221-ac37-5b8f6e881c80")
 	)
 	(wire
 		(pts
@@ -2867,7 +3032,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 137.16) (xy 158.75 128.27)
+			(xy 158.75 134.62) (xy 158.75 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2877,7 +3042,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 119.38) (xy 158.75 119.38)
+			(xy 153.67 116.84) (xy 158.75 116.84)
 		)
 		(stroke
 			(width 0)
@@ -2927,7 +3092,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 128.27) (xy 158.75 128.27)
+			(xy 153.67 125.73) (xy 158.75 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2937,7 +3102,7 @@
 	)
 	(bus
 		(pts
-			(xy 124.46 80.01) (xy 166.37 80.01)
+			(xy 124.46 80.01) (xy 171.45 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2947,7 +3112,7 @@
 	)
 	(bus
 		(pts
-			(xy 166.37 80.01) (xy 166.37 171.45)
+			(xy 171.45 80.01) (xy 171.45 171.45)
 		)
 		(stroke
 			(width 0)
@@ -2957,7 +3122,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 110.49) (xy 158.75 119.38)
+			(xy 158.75 107.95) (xy 158.75 116.84)
 		)
 		(stroke
 			(width 0)
@@ -3037,7 +3202,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 128.27) (xy 158.75 119.38)
+			(xy 158.75 125.73) (xy 158.75 116.84)
 		)
 		(stroke
 			(width 0)
@@ -3057,7 +3222,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 144.78) (xy 158.75 144.78)
+			(xy 153.67 142.24) (xy 158.75 142.24)
 		)
 		(stroke
 			(width 0)
@@ -3100,9 +3265,9 @@
 		)
 		(uuid "18569c9f-d190-4aad-b1e8-40a155614e14")
 	)
-	(text "Buzzer , LEDs & RGB Circuit"
+	(text "Buzzer , Buzzer_control_SW, LEDs & RGB Circuit"
 		(exclude_from_sim no)
-		(at 138.43 78.232 0)
+		(at 147.574 78.74 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3233,7 +3398,7 @@
 	)
 	(global_label "Buzzer_I{slash}P"
 		(shape input)
-		(at 142.24 158.75 180)
+		(at 139.7 157.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3243,7 +3408,7 @@
 		)
 		(uuid "191828eb-50c4-46c5-a4b2-b1c424aa522e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 128.7319 158.75 0)
+			(at 126.1919 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3343,7 +3508,7 @@
 	)
 	(global_label "LED1"
 		(shape input)
-		(at 138.43 101.6 180)
+		(at 138.43 99.06 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3353,7 +3518,7 @@
 		)
 		(uuid "280c983a-a5d0-4d17-a539-d3252bcce0f1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.7882 101.6 0)
+			(at 130.7882 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3409,7 +3574,7 @@
 	)
 	(global_label "LED3"
 		(shape input)
-		(at 138.43 119.38 180)
+		(at 138.43 116.84 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3419,7 +3584,7 @@
 		)
 		(uuid "3a3a0855-d23d-4a38-a480-d4708e511e5c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.7882 119.38 0)
+			(at 130.7882 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3673,7 +3838,7 @@
 	)
 	(global_label "LED2"
 		(shape input)
-		(at 138.43 110.49 180)
+		(at 138.43 107.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3683,7 +3848,7 @@
 		)
 		(uuid "796dd944-4d26-4f14-8da9-6ba30c6b7597")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.7882 110.49 0)
+			(at 130.7882 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3728,6 +3893,28 @@
 		(uuid "7b55ef8e-3931-4c5b-a895-e98272b24638")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 97.3281 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Buzzer_control_SW"
+		(shape input)
+		(at 86.36 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "7de6712a-9f45-4ac3-824b-d31cd7c61f82")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.8752 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3893,7 +4080,7 @@
 	)
 	(global_label "LED4"
 		(shape input)
-		(at 138.43 128.27 180)
+		(at 138.43 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3903,7 +4090,7 @@
 		)
 		(uuid "a5e4b3bd-3c64-462b-9011-168685c6d776")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.7882 128.27 0)
+			(at 130.7882 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4047,7 +4234,7 @@
 	)
 	(global_label "LED6"
 		(shape input)
-		(at 138.43 144.78 180)
+		(at 138.43 142.24 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4057,7 +4244,7 @@
 		)
 		(uuid "c03fbf70-c7c6-4724-9699-b39a3e4b4554")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.7882 144.78 0)
+			(at 130.7882 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4135,7 +4322,7 @@
 	)
 	(global_label "LED5"
 		(shape input)
-		(at 138.43 137.16 180)
+		(at 138.43 134.62 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4145,7 +4332,7 @@
 		)
 		(uuid "e35526c0-9d36-4979-8b07-428b67583a82")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.7882 137.16 0)
+			(at 130.7882 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4168,6 +4355,28 @@
 		(uuid "ee885f24-9a6c-4ac6-b3d8-73cda44abf64")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 123.2892 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Buzzer_control_SW"
+		(shape input)
+		(at 156.21 151.13 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "f12a1c96-3418-40df-9770-0a3b5090243f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 156.21 167.6452 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4279,7 +4488,7 @@
 			(uuid "327dc14c-ec73-4c34-a770-a8141f22d37c")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR01")
 					(unit 1)
@@ -4289,7 +4498,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 142.24 144.78 270)
+		(at 142.24 142.24 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4297,7 +4506,7 @@
 		(dnp no)
 		(uuid "1bb4fdd2-2dc7-47ea-9856-e1cbaef3f1a8")
 		(property "Reference" "R6"
-			(at 142.494 139.446 90)
+			(at 142.494 136.906 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4305,7 +4514,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 142.494 141.986 90)
+			(at 142.494 139.446 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4313,7 +4522,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 143.002 90)
+			(at 142.24 140.462 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4322,7 +4531,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 142.24 144.78 0)
+			(at 142.24 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4331,7 +4540,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 142.24 144.78 0)
+			(at 142.24 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4346,7 +4555,7 @@
 			(uuid "43b7ada2-bef0-40f6-8677-4971caf0d9ae")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "R6")
 					(unit 1)
@@ -4356,7 +4565,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 142.24 101.6 270)
+		(at 142.24 99.06 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4364,7 +4573,7 @@
 		(dnp no)
 		(uuid "2104f966-2605-46dd-8f20-2e3e00fc1596")
 		(property "Reference" "R1"
-			(at 141.986 96.012 90)
+			(at 141.986 93.472 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4372,7 +4581,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 141.986 98.552 90)
+			(at 141.986 96.012 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4380,7 +4589,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 99.822 90)
+			(at 142.24 97.282 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4389,7 +4598,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 142.24 101.6 0)
+			(at 142.24 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4398,7 +4607,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 142.24 101.6 0)
+			(at 142.24 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4413,7 +4622,7 @@
 			(uuid "2d424105-a20a-4aa4-b2b2-7d7e39f1b2a9")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "R1")
 					(unit 1)
@@ -4478,7 +4687,7 @@
 			(uuid "7a6424ca-01c8-447e-8e8a-f8b49bba5cfe")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR04")
 					(unit 1)
@@ -4543,7 +4752,7 @@
 			(uuid "d85cc551-c6fe-465b-b60d-d9479e08ed57")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR017")
 					(unit 1)
@@ -4608,7 +4817,7 @@
 			(uuid "3e46489d-2e3c-4a29-bbdc-401b6b1491bf")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR02")
 					(unit 1)
@@ -4618,7 +4827,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 63.5 133.35 0)
+		(at 63.5 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4626,7 +4835,7 @@
 		(dnp no)
 		(uuid "39b3159f-d894-4b34-b439-89789d7dbfed")
 		(property "Reference" "#PWR03"
-			(at 63.5 139.7 0)
+			(at 63.5 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4635,7 +4844,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 63.246 139.192 0)
+			(at 63.246 140.462 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4643,7 +4852,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 133.35 0)
+			(at 63.5 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4652,7 +4861,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 133.35 0)
+			(at 63.5 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4661,7 +4870,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 63.5 133.35 0)
+			(at 63.5 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4673,7 +4882,7 @@
 			(uuid "36cc5824-bbe0-43fd-b041-393557859dc2")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR03")
 					(unit 1)
@@ -4683,7 +4892,7 @@
 	)
 	(symbol
 		(lib_id "MLT-5020:MLT-5020")
-		(at 132.08 167.64 0)
+		(at 129.54 166.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4691,7 +4900,7 @@
 		(dnp no)
 		(uuid "45b723fd-4fd2-411e-a860-170ae38fd3cd")
 		(property "Reference" "U5"
-			(at 147.32 150.876 0)
+			(at 144.78 149.606 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4700,7 +4909,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 153.67 160.02 0)
+			(at 151.13 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4709,7 +4918,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 143.51 162.56 0)
+			(at 140.97 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4718,7 +4927,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 162.56 0)
+			(at 140.97 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4727,7 +4936,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 143.51 162.56 0)
+			(at 140.97 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4745,7 +4954,7 @@
 			(uuid "c53f1f42-b75c-4666-9397-bf5b067758e1")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "U5")
 					(unit 1)
@@ -4755,7 +4964,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 149.86 144.78 180)
+		(at 149.86 142.24 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4763,7 +4972,7 @@
 		(dnp no)
 		(uuid "5bdd6194-93ae-4237-a01f-7ca72a481deb")
 		(property "Reference" "D6"
-			(at 149.352 139.446 0)
+			(at 149.352 136.906 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4771,7 +4980,7 @@
 			)
 		)
 		(property "Value" "LED6"
-			(at 149.352 141.986 0)
+			(at 149.352 139.446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4779,7 +4988,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 144.78 0)
+			(at 149.86 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4788,7 +4997,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 144.78 0)
+			(at 149.86 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4797,7 +5006,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 149.86 144.78 0)
+			(at 149.86 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4812,7 +5021,7 @@
 			(uuid "a44ada8a-cfec-43b7-ad0e-83f3037f0d24")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "D6")
 					(unit 1)
@@ -4822,7 +5031,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 149.86 137.16 180)
+		(at 149.86 134.62 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4830,7 +5039,7 @@
 		(dnp no)
 		(uuid "60e5649e-cfaf-41c1-9fb4-dd6dca9bf882")
 		(property "Reference" "D5"
-			(at 149.606 131.826 0)
+			(at 149.606 129.286 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4838,7 +5047,7 @@
 			)
 		)
 		(property "Value" "LED5"
-			(at 149.606 134.366 0)
+			(at 149.606 131.826 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4846,7 +5055,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 137.16 0)
+			(at 149.86 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4855,7 +5064,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 137.16 0)
+			(at 149.86 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4864,7 +5073,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 149.86 137.16 0)
+			(at 149.86 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4879,7 +5088,7 @@
 			(uuid "afda6dd4-be20-4247-bd8c-fcf1884ab35f")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "D5")
 					(unit 1)
@@ -4889,7 +5098,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 149.86 128.27 180)
+		(at 149.86 125.73 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4897,7 +5106,7 @@
 		(dnp no)
 		(uuid "64f379aa-9d92-412a-8827-8a485be03daa")
 		(property "Reference" "D4"
-			(at 149.352 122.936 0)
+			(at 149.352 120.396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4905,7 +5114,7 @@
 			)
 		)
 		(property "Value" "LED4"
-			(at 149.352 125.476 0)
+			(at 149.352 122.936 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4913,7 +5122,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 128.27 0)
+			(at 149.86 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4922,7 +5131,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 128.27 0)
+			(at 149.86 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4931,7 +5140,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 149.86 128.27 0)
+			(at 149.86 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4946,7 +5155,7 @@
 			(uuid "674c0868-7c47-4728-8826-a6669df4a2c7")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "D4")
 					(unit 1)
@@ -5037,7 +5246,7 @@
 			(uuid "071ba059-2df9-4fdb-b787-fe13eddcf8e5")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "U4")
 					(unit 1)
@@ -5107,7 +5316,7 @@
 			(uuid "74aa9854-e4d2-4d94-a323-a75797cd3efe")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "Power_Sw")
 					(unit 1)
@@ -5117,7 +5326,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 162.56 119.38 90)
+		(at 160.02 116.84 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5125,7 +5334,7 @@
 		(dnp no)
 		(uuid "8382135e-7a79-4141-bdc3-0d828f670900")
 		(property "Reference" "#PWR010"
-			(at 168.91 119.38 0)
+			(at 166.37 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5134,7 +5343,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 167.64 119.38 0)
+			(at 165.1 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5142,7 +5351,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 162.56 119.38 0)
+			(at 160.02 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5151,7 +5360,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 119.38 0)
+			(at 160.02 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5160,7 +5369,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 162.56 119.38 0)
+			(at 160.02 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5172,9 +5381,74 @@
 			(uuid "0efb9393-17ff-4a00-b3ca-5f068c50933b")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 166.37 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "86dba701-64a9-4be7-a66f-390c9ade2892")
+		(property "Reference" "#PWR07"
+			(at 166.37 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 166.37 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 166.37 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 166.37 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 166.37 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6b293862-8cdc-48cf-90f5-f5d8eefda015")
+		)
+		(instances
+			(project "V2_sch"
+				(path "/8b781000-4ca1-4476-b455-0c449c659171"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -5237,7 +5511,7 @@
 			(uuid "c8afddd5-b8dc-4e8d-a606-27561d02e02f")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR014")
 					(unit 1)
@@ -5247,7 +5521,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 142.24 154.94 0)
+		(at 139.7 153.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5256,7 +5530,7 @@
 		(fields_autoplaced yes)
 		(uuid "8c15d34d-9bca-4100-9c5e-7f07bbba1c86")
 		(property "Reference" "#PWR013"
-			(at 142.24 158.75 0)
+			(at 139.7 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5265,7 +5539,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 142.24 149.86 0)
+			(at 139.7 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5273,7 +5547,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 154.94 0)
+			(at 139.7 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5282,7 +5556,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 154.94 0)
+			(at 139.7 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5291,7 +5565,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 142.24 154.94 0)
+			(at 139.7 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5303,7 +5577,7 @@
 			(uuid "ebe5a540-71f2-4c2f-9b5c-7ef915abf0dd")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR013")
 					(unit 1)
@@ -5376,7 +5650,7 @@
 			(uuid "71762f4a-f9d5-4266-810e-d4abb3a325f5")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "U3")
 					(unit 1)
@@ -5441,7 +5715,7 @@
 			(uuid "2dbfe697-15a4-47ca-b9b8-5132d5abab0a")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR016")
 					(unit 1)
@@ -5507,7 +5781,7 @@
 			(uuid "263af315-9044-42fc-8e5e-503638a7446e")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR021")
 					(unit 1)
@@ -5573,7 +5847,7 @@
 			(uuid "187f02fc-13ac-4bb0-8c10-020755927192")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR015")
 					(unit 1)
@@ -5684,7 +5958,7 @@
 			(uuid "7d1c78d2-5219-4fea-a5f0-1810da392f36")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "74H595")
 					(unit 1)
@@ -5694,7 +5968,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 149.86 101.6 180)
+		(at 149.86 99.06 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5702,7 +5976,7 @@
 		(dnp no)
 		(uuid "a49c2687-319b-4470-90cd-84aac64dec4b")
 		(property "Reference" "D1"
-			(at 149.606 96.012 0)
+			(at 149.606 93.472 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5710,7 +5984,7 @@
 			)
 		)
 		(property "Value" "LED1"
-			(at 149.606 98.552 0)
+			(at 149.606 96.012 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5718,7 +5992,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 101.6 0)
+			(at 149.86 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5727,7 +6001,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 101.6 0)
+			(at 149.86 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5736,7 +6010,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 149.86 101.6 0)
+			(at 149.86 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5751,7 +6025,7 @@
 			(uuid "2f8cdd85-3e4d-49da-bfd6-e659eaf24a6b")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "D1")
 					(unit 1)
@@ -5932,7 +6206,7 @@
 			(uuid "108458b1-3a96-4d72-921f-437d0fa39a47")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "U1")
 					(unit 1)
@@ -5941,24 +6215,24 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 149.86 110.49 180)
+		(lib_id "Device:R")
+		(at 166.37 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a8ad25fc-f169-4583-b5ae-f7ad659649e4")
-		(property "Reference" "D2"
-			(at 149.606 104.902 0)
+		(uuid "a888ade1-8c9d-4cb9-9bef-b14ccb02e292")
+		(property "Reference" "R7"
+			(at 160.782 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "LED2"
-			(at 149.606 107.442 0)
+		(property "Value" "1k"
+			(at 163.322 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5966,7 +6240,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 110.49 0)
+			(at 164.592 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5975,7 +6249,74 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 110.49 0)
+			(at 166.37 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 166.37 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "defab240-b485-4f88-a306-5cb78e99e477")
+		)
+		(pin "1"
+			(uuid "c51b1669-8177-423d-9641-43f06af381df")
+		)
+		(instances
+			(project "V2_sch"
+				(path "/8b781000-4ca1-4476-b455-0c449c659171"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 149.86 107.95 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a8ad25fc-f169-4583-b5ae-f7ad659649e4")
+		(property "Reference" "D2"
+			(at 149.606 102.362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED2"
+			(at 149.606 104.902 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5984,7 +6325,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 149.86 110.49 0)
+			(at 149.86 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5999,7 +6340,7 @@
 			(uuid "ec0ea020-ea31-4ffb-9c69-d4eae7fcebcd")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "D2")
 					(unit 1)
@@ -6074,7 +6415,7 @@
 			(uuid "899ad0ec-2cc3-40bd-b91b-461582886793")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "GPS-Neo-6m")
 					(unit 1)
@@ -6139,7 +6480,7 @@
 			(uuid "8fed8ace-2ae0-44c0-850b-e941f464893d")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR06")
 					(unit 1)
@@ -6149,7 +6490,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 142.24 119.38 270)
+		(at 142.24 116.84 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6157,7 +6498,7 @@
 		(dnp no)
 		(uuid "b8630a41-0c32-4a2c-ae88-309d5f97778e")
 		(property "Reference" "R5"
-			(at 142.24 113.792 90)
+			(at 142.24 111.252 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6165,7 +6506,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 142.24 116.332 90)
+			(at 142.24 113.792 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6173,7 +6514,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 117.602 90)
+			(at 142.24 115.062 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6182,7 +6523,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 142.24 119.38 0)
+			(at 142.24 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6191,7 +6532,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 142.24 119.38 0)
+			(at 142.24 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6206,7 +6547,7 @@
 			(uuid "4fe2dcb3-a67b-418a-b978-a33392c7b703")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "R5")
 					(unit 1)
@@ -6215,24 +6556,24 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 149.86 119.38 180)
+		(lib_id "Switch:SW_Push")
+		(at 161.29 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bf7e52eb-35af-4d66-a815-7daa48e28d2e")
-		(property "Reference" "D3"
-			(at 149.86 113.538 0)
+		(uuid "bd83d070-6992-41ed-9fc4-88a122f6ac41")
+		(property "Reference" "Buzzer_SW"
+			(at 161.798 146.304 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "LED3"
-			(at 149.86 116.078 0)
+		(property "Value" "~"
+			(at 161.29 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6240,7 +6581,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 119.38 0)
+			(at 161.29 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6249,7 +6590,74 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 119.38 0)
+			(at 161.29 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 161.29 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "547b1d03-d1a5-4a84-bc08-31ff5ae2efa6")
+		)
+		(pin "2"
+			(uuid "41b01f31-6b69-4a23-be96-cf93ae930861")
+		)
+		(instances
+			(project "V2_sch"
+				(path "/8b781000-4ca1-4476-b455-0c449c659171"
+					(reference "Buzzer_SW")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 149.86 116.84 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bf7e52eb-35af-4d66-a815-7daa48e28d2e")
+		(property "Reference" "D3"
+			(at 149.86 110.998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED3"
+			(at 149.86 113.538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6258,7 +6666,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 149.86 119.38 0)
+			(at 149.86 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6273,7 +6681,7 @@
 			(uuid "039ae7ac-29b6-4457-ad0c-a2a457f97335")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "D3")
 					(unit 1)
@@ -6283,7 +6691,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 142.24 128.27 270)
+		(at 142.24 125.73 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6291,7 +6699,7 @@
 		(dnp no)
 		(uuid "c5e0e1ba-a58b-4b35-bc0c-9d60a231709e")
 		(property "Reference" "R2"
-			(at 142.24 122.936 90)
+			(at 142.24 120.396 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6299,7 +6707,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 142.24 125.476 90)
+			(at 142.24 122.936 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6307,7 +6715,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 126.492 90)
+			(at 142.24 123.952 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6316,7 +6724,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 142.24 128.27 0)
+			(at 142.24 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6325,7 +6733,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 142.24 128.27 0)
+			(at 142.24 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6340,7 +6748,7 @@
 			(uuid "b7bf408d-94ca-4889-9c97-1133b97ba103")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "R2")
 					(unit 1)
@@ -6350,7 +6758,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 142.24 137.16 270)
+		(at 142.24 134.62 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6358,7 +6766,7 @@
 		(dnp no)
 		(uuid "cb3698c4-b2e0-4769-8eb1-ef0e119195e6")
 		(property "Reference" "R4"
-			(at 142.494 131.572 90)
+			(at 142.494 129.032 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6366,7 +6774,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 142.494 134.112 90)
+			(at 142.494 131.572 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6374,7 +6782,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 135.382 90)
+			(at 142.24 132.842 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6383,7 +6791,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 142.24 137.16 0)
+			(at 142.24 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6392,7 +6800,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 142.24 137.16 0)
+			(at 142.24 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6407,7 +6815,7 @@
 			(uuid "7c44f816-b34c-4f43-8ea9-d7e6561abe9d")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "R4")
 					(unit 1)
@@ -6417,7 +6825,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 142.24 162.56 0)
+		(at 139.7 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6425,7 +6833,7 @@
 		(dnp no)
 		(uuid "d27c1bcc-b593-4148-8264-2e0cbf58bd31")
 		(property "Reference" "#PWR05"
-			(at 142.24 168.91 0)
+			(at 139.7 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6434,7 +6842,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 142.24 167.64 0)
+			(at 139.7 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6442,7 +6850,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 162.56 0)
+			(at 139.7 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6451,7 +6859,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 162.56 0)
+			(at 139.7 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6460,7 +6868,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 142.24 162.56 0)
+			(at 139.7 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6472,7 +6880,7 @@
 			(uuid "01a8adf3-8f90-4a32-a062-7c2267e8e71e")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "#PWR05")
 					(unit 1)
@@ -6482,7 +6890,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 142.24 110.49 270)
+		(at 142.24 107.95 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6491,7 +6899,7 @@
 		(fields_autoplaced yes)
 		(uuid "e04a869f-3b3c-4aed-b8f5-ece8e9818041")
 		(property "Reference" "R3"
-			(at 142.24 104.775 90)
+			(at 142.24 102.235 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6499,7 +6907,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 142.24 107.315 90)
+			(at 142.24 104.775 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6507,7 +6915,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 108.712 90)
+			(at 142.24 106.172 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6516,7 +6924,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 142.24 110.49 0)
+			(at 142.24 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6525,7 +6933,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 142.24 110.49 0)
+			(at 142.24 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6540,7 +6948,7 @@
 			(uuid "b926921f-b9df-44ca-b645-e9c347182d1c")
 		)
 		(instances
-			(project "Bike_mamdouh"
+			(project "V2_sch"
 				(path "/8b781000-4ca1-4476-b455-0c449c659171"
 					(reference "R3")
 					(unit 1)
