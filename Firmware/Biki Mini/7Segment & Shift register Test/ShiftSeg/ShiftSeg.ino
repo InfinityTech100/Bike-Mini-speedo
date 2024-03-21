@@ -1,9 +1,9 @@
 // Define pin assignments for the 7-segment display
-#define  DATAPIN     D18  //Pin for data signal  IO18/pin30
-#define  CLOCKPIN    D19  //Pin for clock signal IO19/pin31
-#define  LATCHPIN    D21  //Pin for latch signal IO21/pin33
-#define  COMMON1PIN  D15  //Pin for common Cathode 1 IO15/pin23
-#define  COMMON2PIN  D14  //Pin for common Cathode 2 IO14/pin13
+#define  DATAPIN     18  //Pin for data signal  IO18/pin30
+#define  CLOCKPIN    19  //Pin for clock signal IO19/pin31
+#define  LATCHPIN    21  //Pin for latch signal IO21/pin33
+#define  COMMON1PIN  15  //Pin for common Cathode 1 IO15/pin23
+#define  COMMON2PIN  14  //Pin for common Cathode 2 IO14/pin13
 
 uint32_t Tick_Counter = 0;  // Variable to track time intervals
 
