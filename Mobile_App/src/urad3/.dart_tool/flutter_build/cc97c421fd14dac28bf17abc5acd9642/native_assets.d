@@ -1,0 +1,1 @@
+ D:\\Bike\ Mini\ speedo\\Mobile_App\\src\\urad3\\.dart_tool\\flutter_build\\cc97c421fd14dac28bf17abc5acd9642\\native_assets.yaml: 
