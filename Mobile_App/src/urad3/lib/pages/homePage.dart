@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lcd_led/lcd_led.dart';
+import 'package:location/location.dart';
 import 'package:urad3/pages/DevicePage.dart';
 import 'package:urad3/pages/GalleryPage.dart';
 import 'package:urad3/pages/SettingPage.dart';
@@ -62,13 +63,14 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   List<double> objectsDist = [];
   List<Widget> cars = [];
   String st = "safe";
-
+  late LocationData _currentLocation;
+  late Location location;
+  double dbgMsg = 0.0;
   BatteryLevelWidget mybattery = BatteryLevelWidget(
     batteryLevel: 0.80,
     frameWidth: 50,
     frameHeight: 20,
   );
-
   void initPermessions() async {
     WidgetsFlutterBinding.ensureInitialized();
     [
@@ -79,7 +81,24 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       Permission.bluetoothScan
     ].request();
     await FlutterBluePlus.turnOn();
-
+    location = Location();
+    location.enableBackgroundMode(enable: true);
+    bool serviceEnabled;
+    // try{
+    //   serviceEnabled = await location.serviceEnabled();
+    //   if (!serviceEnabled) {
+    //     serviceEnabled = await location.requestService();
+    //
+    //   }
+    // }
+    // catch(e)
+    // {
+    //
+    // }
+    location.onLocationChanged.listen((LocationData currentLocation) {
+      //   // Use current location
+      _currentLocation = currentLocation;
+    });
     // WidgetsFlutterBinding.ensureInitialized(); // Initialize the Flutter binding
     // PermissionStatus st3 = await Permission.bluetooth.request();
     // PermissionStatus st2 = await Permission.location.request();
@@ -96,7 +115,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     //   onDataRecieved:Brecieved_callback,
     // );
 
-    /*   startTimer(); */
+      /* startTimer(); */
   }
 
   @override
@@ -115,49 +134,88 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     timer2 = Timer.periodic(Duration(milliseconds: 10000), (Timer timer) {});
   }
  */
+
   void Brecieved_callback(List<int> data) {
+    double? mySpeed = 0;
+    try {
+      mySpeed = _currentLocation.speed;
+    } catch (e) {
+      print("failed to get device speed ,maybe un initialized .!");
+    }
+    //double? mySpeed =10; //for dbg purpose
+    setState(() {
+      dbgMsg = mySpeed!;
+    });
+
+    print(data);
     objectsDist.clear();
     if (data[0] == 0xfd) {
       int objsz = data[1];
-      for (int i = 0; i < objsz; i++) {
-        objectsDist.add(data[i + 2].toDouble());
+      for (int i = 0; i < objsz * 3; i = i + 3) {
+        if ((data[i + 3] > 0) && (data[i + 4].toDouble() > mySpeed!)) {
+          objectsDist.add(data[i + 2].toDouble() / 2);
+        }
+        // objectsDist.add(data[i + 2].toDouble());
       }
     }
-/*     // 1-sort distances
-    objectsDist.sort();
-    // 2-translate distances
-    double of = 0;
-    if (sh > 600) {
-      of = (sh / 24);
-    } else {
-      of = ((sh / 18) - 30);
-    }
-    double offset = 176 + of;
-    cars.clear();
-    double sum = 0;
-    for (int i = 0; i < objectsDist.length; i++) {
-      if (objectsDist[i] < 50) {
-        sum = 0;
-        double y = ((objectsDist[i] * (sh - offset) / 60));
-        // show the cars
-        cars.add(Car(displacement: y, visible: true));
+    print(objectsDist);
+    if ((data[0] == 0xfd) && (data[1] == objectsDist.length)) {
+      print("displaying objects");
+      objectsDist.sort();
+      // 2-translate distances
+      for (int i = 0; i < objectsDist.length; i++) {
+        double distance = objectsDist[i];
+        if (distance < 30) {
+          led1state = true;
+        } else if (distance >= 31 && distance <= 60) {
+          led2state = true;
+        } else if (distance >= 61 && distance <= 90) {
+          led3state = true;
+        } else if (distance >= 91 && distance <= 120) {
+          led4state = true;
+        } else {
+          led5state = true;
+        }
       }
-    }
-    // show bike status
-    if (objectsDist[0] < 10) {
-      setState(() {
-        st = "danger";
-      });
-    } else if (objectsDist[0] < 30) {
-      setState(() {
-        st = "warning";
-      });
+      double of = 0;
+      if (sh > 600) {
+        of = (sh / 24);
+      } else {
+        of = ((sh / 18) - 30);
+      }
+      double offset = 176 + of;
+      cars.clear();
+      double sum = 0;
+      for (int i = 0; i < objectsDist.length; i++) {
+        if (objectsDist[i] < 50) {
+          sum = 0;
+          double y = ((objectsDist[i] * (sh - offset) / 60));
+          // show the cars
+          cars.add(Car(displacement: y, visible: true));
+        }
+      }
+      // show bike status
+      if (objectsDist[0] < 10) {
+        setState(() {
+          st = "danger";
+        });
+      } else if (objectsDist[0] < 30) {
+        setState(() {
+          st = "warning";
+        });
+      } else {
+        setState(() {
+          st = "safe";
+        });
+      }
     } else {
       setState(() {
+        cars.clear();
         st = "safe";
       });
     }
-    print("data" + objectsDist.toString()); */
+
+    // print("data" + objectsDist.toString());
   }
 
   void setDrawerItems(List<String> newItems, List<String> newItems2) {
@@ -174,15 +232,13 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     BluetoothDevice selectedBLE = BluetoothDevice(
       remoteId: DeviceIdentifier(sda),
       //  localName: sd,
-      //type: BluetoothDeviceType.le);/*  */
+      //type: BluetoothDeviceType.le);
     );
     await selectedBLE.connect(
         timeout: const Duration(seconds: 3), autoConnect: true);
-
     print("characterestics=");
     var x2 = await selectedBLE.discoverServices(timeout: 15);
     BluetoothCharacteristic x3;
-
     for (var i in x2) {
       if (i.serviceUuid.toString() == '4fafc201-1fb5-459e-8fcc-c5c9c331914b') {
         print("object");
@@ -263,40 +319,9 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       ),
     );
   }
-
-  Widget vLines() {
-    double screenHeight = sh;
-    double lineStart = (sh > 600) ? (screenHeight / 6) : (screenHeight / 4);
-    double end = (sh > 600) ? 130 : 80;
-    return Column(
-      children: [
-        SizedBox(height: lineStart + 40),
-        Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 2,
-                height: sh - lineStart - end,
-                color: Colors.white,
-              ),
-              SizedBox(width: 100),
-              Container(
-                width: 2,
-                height: sh - lineStart - end,
-                color: Colors.white,
-              ),
-            ],
-          ),
-        )
-      ],
-    );
-  }
-
   void pressed() {
     print("pressed...");
   }
-
   Widget MyAppBar(double space1, double space2, double space3) {
     return Row(
       children: [
@@ -320,7 +345,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         ),
         // Gallery
         Container(
-          margin: EdgeInsets.only(left: 20),
+          margin: const EdgeInsets.only(left: 20),
           height: 30,
           width: 30,
           child: BTN(
@@ -391,11 +416,11 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   Color dayButtonColor = Colors.grey;
   Color offButtonColor = Colors.grey;
   Color iconColor = Colors.grey;
-  bool led1state = true;
-  bool led2state = true;
-  bool led3state = true;
-  bool led4state = true;
-  bool led5state = true;
+  bool led1state = false;
+  bool led2state = false;
+  bool led3state = false;
+  bool led4state = false;
+  bool led5state = false;
 // ignore: non_constant_identifier_names
   PreferredSizeWidget _Urad3AppBar() {
     return AppBar(
@@ -664,7 +689,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         ledElement(
             screenHeight,
             screenWidth,
-            (led4state == true)
+            (led5state == true)
                 ? const Color.fromARGB(255, 66, 171, 89)
                 : Colors.grey,
             '> 120 m'),
@@ -681,7 +706,6 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       rfrsh: RefreshBluetooth,
       setItems: setDrawerItems,
     );
-
     Size screenSize = MediaQuery.of(context).size;
     double screenWidth = screenSize.width;
     double screenHeight = screenSize.height;
@@ -694,7 +718,9 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
               Column(
                 children: [
                   const SizedBox(height: 24),
-                  BikeIndicator(state: 'warning',),
+                  BikeIndicator(
+                    state: 'danger',
+                  ),
                   const SizedBox(
                       height:
                           24), // Add spacing between the bar and the LED digits
@@ -715,7 +741,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
               //  width: 50,
               margin: const EdgeInsets.only(left: 20, top: 65),
               child: BatteryLevelWidget(
-                batteryLevel: 0.70,
+                batteryLevel: 0.50,
                 frameHeight: 30,
                 frameWidth: 60,
               ),

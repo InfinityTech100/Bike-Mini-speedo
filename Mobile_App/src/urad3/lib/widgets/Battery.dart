@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class BatteryLevelWidget extends StatelessWidget {
   double batteryLevel;
   final double frameWidth;
@@ -21,7 +22,7 @@ class BatteryLevelWidget extends StatelessWidget {
     return Stack(
       children: [
         // Battery frame image
-        Container(
+        SizedBox(
           width: frameWidth,
           height: frameHeight,
           child:   Image.asset(

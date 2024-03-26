@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class BikeIndicator extends StatelessWidget {
   Color stateColor=Colors.green;
   final String state;

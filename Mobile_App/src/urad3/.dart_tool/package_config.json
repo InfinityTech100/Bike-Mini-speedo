@@ -80,6 +80,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///C:/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "get",
       "rootUri": "file:///C:/Users/mamdo/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.6",
       "packageUri": "lib/",
@@ -96,6 +102,12 @@
       "rootUri": "file:///C:/Users/mamdo/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///C:/Users/mamdo/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "lcd_led",
@@ -126,6 +138,24 @@
       "rootUri": "file:///C:/Users/mamdo/AppData/Local/Pub/Cache/hosted/pub.dev/lints-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "location",
+      "rootUri": "file:///C:/Users/mamdo/AppData/Local/Pub/Cache/hosted/pub.dev/location-5.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "location_platform_interface",
+      "rootUri": "file:///C:/Users/mamdo/AppData/Local/Pub/Cache/hosted/pub.dev/location_platform_interface-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "location_web",
+      "rootUri": "file:///C:/Users/mamdo/AppData/Local/Pub/Cache/hosted/pub.dev/location_web-4.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "matcher",
@@ -296,7 +326,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-03-25T22:11:52.424967Z",
+  "generated": "2024-03-26T14:50:32.083398Z",
   "generator": "pub",
   "generatorVersion": "3.3.2"
 }

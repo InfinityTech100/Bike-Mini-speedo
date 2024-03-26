@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.5
   flutter_svg: ^2.0.10+1
   lcd_led: ^1.0.0
+  location: ^5.0.3
 
 dev_dependencies:
   flutter_test:

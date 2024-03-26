@@ -20,14 +20,14 @@ class _SettingsPageState extends State<DevicePage> {
           size: 24,
           onPressed: () => {print("hello")},
         ),
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         FWBTN(
           icon: Icons.sd_card,
           text: "Storage",
           size: 24,
           onPressed: () => {print("help")},
         ),
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         FWBTN(
           icon: Icons.update,
           text: "Software Updates",
@@ -46,20 +46,20 @@ class _SettingsPageState extends State<DevicePage> {
         title:const Text('Device Settings'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
           Container(
           alignment: Alignment.topCenter,
-          child: Container(
+          child: SizedBox(
             width: 200,
             height: 200,
             child: Image.asset('assets/images/device.png'), // Replace 'assets/device.png' with the path to your image
           ),
         ),
             const SizedBox(height: 26.0),
-            Center(
+            const Center(
               child: Column(
                 children:  [
                  Text(
@@ -69,7 +69,7 @@ class _SettingsPageState extends State<DevicePage> {
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
-                  const SizedBox(height: 5.0),
+                  SizedBox(height: 5.0),
                   Text(
                     'Model Number',
                     style: TextStyle(
