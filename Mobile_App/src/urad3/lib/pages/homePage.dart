@@ -613,73 +613,89 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         const SizedBox(
           height: 25,
         ), // Adjust the space between the text and buttons
-        TextButton(
-          onPressed: () {
-            // Add onPressed logic for the first button
-            setState(() {
-              nightButtonColor = Colors.white;
-              dayButtonColor = Colors.grey;
-              offButtonColor = Colors.grey;
-              iconColor = Colors.green;
-            });
-          },
-          child: Text(
-            'NIGHT',
-            style: TextStyle(
-              color: nightButtonColor,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.only(
+              left: 15), // Adjust the left padding as needed
+          child: TextButton(
+            onPressed: () {
+              // Add onPressed logic for the first button
+              setState(() {
+                nightButtonColor = Colors.white;
+                dayButtonColor = Colors.grey;
+                offButtonColor = Colors.grey;
+                iconColor = Colors.green;
+              });
+            },
+            child: Text(
+              'NIGHT',
+              style: TextStyle(
+                color: nightButtonColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
-        TextButton(
-          onPressed: () {
-            // Add onPressed logic for the second button
-            setState(() {
-              nightButtonColor = Colors.grey;
-              dayButtonColor = Colors.white;
-              offButtonColor = Colors.grey;
-              iconColor = Colors.green;
-            });
-          },
-          child: Text(
-            'DAY',
-            style: TextStyle(
-              color: dayButtonColor,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.only(
+              left: 15), // Adjust the left padding as needed
+          child: TextButton(
+            onPressed: () {
+              // Add onPressed logic for the second button
+              setState(() {
+                nightButtonColor = Colors.grey;
+                dayButtonColor = Colors.white;
+                offButtonColor = Colors.grey;
+                iconColor = Colors.green;
+              });
+            },
+            child: Text(
+              'DAY',
+              style: TextStyle(
+                color: dayButtonColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
-        TextButton(
-          onPressed: () {
-            // Add onPressed logic for the third button
-            setState(() {
-              nightButtonColor = Colors.grey;
-              dayButtonColor = Colors.grey;
-              offButtonColor = Colors.white;
-              iconColor = Colors.grey;
-            });
-          },
-          child: Text(
-            'OFF',
-            style: TextStyle(
-              color: offButtonColor,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.only(
+              left: 15), // Adjust the left padding as needed
+          child: TextButton(
+            onPressed: () {
+              // Add onPressed logic for the third button
+              setState(() {
+                nightButtonColor = Colors.grey;
+                dayButtonColor = Colors.grey;
+                offButtonColor = Colors.white;
+                iconColor = Colors.grey;
+              });
+            },
+            child: Text(
+              'OFF',
+              style: TextStyle(
+                color: offButtonColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
         const SizedBox(
             height: 20), // Adjust the space between the buttons and the icon
-        TextButton(
-          onPressed: () {},
-          child: SvgPicture.asset(
-            'assets/icons/flashlight.svg', // Replace 'your_icon.svg' with the path to your SVG icon
-            height: 65, // Adjust the height of the icon as needed
-            width: 10, // Adjust the width of the icon as needed
-            // ignore: deprecated_member_use
-            color: iconColor,
+        Padding(
+          padding: const EdgeInsets.only(
+              left: 15), // Adjust the left padding as needed
+          child: TextButton(
+            onPressed: () {},
+            child: SvgPicture.asset(
+              'assets/icons/flashlight.svg', // Replace 'your_icon.svg' with the path to your SVG icon
+              height: 65, // Adjust the height of the icon as needed
+              width: 10, // Adjust the width of the icon as needed
+              // ignore: deprecated_member_use
+              color: iconColor,
+            ),
           ),
         )
       ],
@@ -820,7 +836,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
               Column(
                 children: [
                   SizedBox(
-                    height: screenHeight / 2.2,
+                    height: screenHeight / 2.3,
                   ),
                   IconButton(
                       onPressed: () {
@@ -841,7 +857,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
             (!isDrawerOpen)
                 ? Container(
                     //  width: 50,
-                    margin: const EdgeInsets.only(left: 20, top: 55),
+                    margin: const EdgeInsets.only(left: 15, top: 55),
                     child: BatteryLevelWidget(
                       batteryLevel: 1.0,
                       frameHeight: 30,
