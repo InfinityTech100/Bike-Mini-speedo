@@ -19,7 +19,7 @@ class FWBTN extends StatelessWidget {
           print("hhh");
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black, // Set background color
+        //  backgroundColor: Colors.black, // Set background color
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,

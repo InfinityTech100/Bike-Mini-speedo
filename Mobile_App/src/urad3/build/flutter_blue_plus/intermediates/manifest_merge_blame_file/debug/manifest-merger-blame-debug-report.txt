@@ -6,10 +6,7 @@
 6     complicated and always changing. By leaving this blank, users can set exactly the 
 7     permissions they want, without having to 'undo' the permissions we set here
 8    -->
-9    <uses-sdk
-10        android:minSdkVersion="21"
-10-->C:\Users\mamdo\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus-1.31.17\android\src\main\AndroidManifest.xml
-11        android:targetSdkVersion="21" />
-11-->C:\Users\mamdo\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus-1.31.17\android\src\main\AndroidManifest.xml
-12
-13</manifest>
+9    <uses-sdk android:minSdkVersion="21" />
+9-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_blue_plus-1.31.17\android\src\main\AndroidManifest.xml
+10
+11</manifest>

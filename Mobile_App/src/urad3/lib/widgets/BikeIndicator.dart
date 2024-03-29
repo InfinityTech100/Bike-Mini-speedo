@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class BikeIndicator extends StatelessWidget {
   Color stateColor=Colors.green;
   final String state;
-  BikeIndicator({required this.state});
+  BikeIndicator({Key? key, required this.state}) : super(key: key);
   void setState()
   {
      if(state=="danger")
      {
-
          stateColor=Colors.red;
      }
      else if(state=="warning")
@@ -23,17 +21,17 @@ class BikeIndicator extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity, // Full width of the screen
       height: 55,
       child: ElevatedButton.icon(
         onPressed: () {
           // Button press logic
         },
-        icon: Icon(Icons.directions_bike,size: 40),
-        label: Text(''),
+        icon: const Icon(Icons.directions_bike,size: 40),
+        label: const Text(''),
         style: ElevatedButton.styleFrom(
-          backgroundColor: (state=="danger")?Colors.red:(state=="warning")?Colors.orange:Colors.green ,
+        shadowColor: (state=="danger")?Colors.red:(state=="warning")?Colors.orange:Colors.green ,
         ),
       ),
     );

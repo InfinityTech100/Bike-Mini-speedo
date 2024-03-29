@@ -59,7 +59,7 @@ class _SettingsPageState extends State<DevicePage> {
           ),
         ),
             const SizedBox(height: 26.0),
-            const Center(
+             Center(
               child: Column(
                 children:  [
                  Text(
@@ -72,7 +72,7 @@ class _SettingsPageState extends State<DevicePage> {
                   SizedBox(height: 5.0),
                   Text(
                     'Model Number',
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 10.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.white70),

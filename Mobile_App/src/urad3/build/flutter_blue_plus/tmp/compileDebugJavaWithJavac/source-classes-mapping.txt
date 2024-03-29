@@ -1,0 +1,13 @@
+com/lib/flutter_blue_plus/BuildConfig.java
+ com.lib.flutter_blue_plus.BuildConfig
+com/lib/flutter_blue_plus/FlutterBluePlusPlugin.java
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$1
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$2
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$3
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$4
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$5
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$ChrFound
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$LogLevel
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$OperationOnPermission
+ com.lib.flutter_blue_plus.FlutterBluePlusPlugin$ServicePair
