@@ -207,9 +207,9 @@
     },
     {
       "name": "segment_display",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/segment_display-0.4.2",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/segment_display-0.5.0",
       "packageUri": "lib/",
-      "languageVersion": "2.6"
+      "languageVersion": "2.12"
     },
     {
       "name": "sky_engine",
@@ -278,7 +278,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2024-03-27T18:37:31.344759Z",
+  "generated": "2024-03-29T20:24:10.549870Z",
   "generator": "pub",
   "generatorVersion": "2.16.0"
 }

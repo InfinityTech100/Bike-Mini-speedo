@@ -1,16 +1,16 @@
+// ignore: file_names
 import 'dart:async';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 //import 'package:lcd_led/lcd_led.dart';
 import 'package:location/location.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:segment_display/segment_display.dart';
 import 'package:urad3/pages/DevicePage.dart';
 import 'package:urad3/pages/GalleryPage.dart';
 import 'package:urad3/pages/SettingPage.dart';
 import 'package:urad3/widgets/Btn.dart';
-import 'package:urad3/widgets/Car.dart';
 import 'package:urad3/widgets/devicesDialog.dart';
 
 import '../widgets/Battery.dart';
@@ -29,6 +29,8 @@ class BlueCam extends GetxController {
 }
 
 class HomePge extends StatelessWidget {
+  const HomePge({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // Start scanning
@@ -44,12 +46,14 @@ class HomePge extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.white),
         ),
       ),
-      home: CenteredTextPage(),
+      home: const CenteredTextPage(),
     );
   }
 }
 
 class CenteredTextPage extends StatefulWidget {
+  const CenteredTextPage({Key? key}) : super(key: key);
+
   @override
   _CenteredTextPageState createState() => _CenteredTextPageState();
 }
@@ -66,7 +70,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   var myBLT;
   List<double> objectsDist = [];
   List<Widget> cars = [];
-  String st = "safe";
+  BikeIndicatorState st = BikeIndicatorState.safe;
   bool refrshen = false;
   String connDevicen = "";
   late LocationData _currentLocation;
@@ -89,7 +93,10 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     await FlutterBluePlus.turnOn();
     location = Location();
     location.enableBackgroundMode(enable: true);
-    bool serviceEnabled;
+    bool serviceEnabled = await location.serviceEnabled();
+    if (!serviceEnabled) {
+      serviceEnabled = await location.requestService();
+    }
     // try{
     //   serviceEnabled = await location.serviceEnabled();
     //   if (!serviceEnabled) {
@@ -118,10 +125,10 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     super.initState();
     initPermessions();
     // myBLT=AbstractBLT(
-    //   onDataRecieved:Brecieved_callback,
+    //   onDataRecieved:_brecieved_callback,
     // );
 
-    /* startTimer(); */
+    startTimer();
   }
 
   @override
@@ -131,17 +138,18 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     super.dispose();
   }
 
-/*   void startTimer() {
-    timer = Timer.periodic(Duration(milliseconds: 100), (Timer timer) {
+  void startTimer() {
+    timer = Timer.periodic(Duration(milliseconds: 1000), (Timer timer) async {
       setState(() {
-        //drawerItems = myBLT.getDevice_Names();
+        mySpeed = _currentLocation.speed;
       });
+    
+      print(mySpeed);
     });
-    timer2 = Timer.periodic(Duration(milliseconds: 10000), (Timer timer) {});
+    /* timer2 = Timer.periodic(Duration(milliseconds: 10000), (Timer timer) {}); */
   }
- */
 
-  void Brecieved_callback(List<int> data) {
+  void _brecieved_callback(List<int> data) {
     double? mySpeed = 0;
     try {
       mySpeed = _currentLocation.speed;
@@ -153,7 +161,9 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       dbgMsg = mySpeed!;
     });
 
-    print(data);
+    if (kDebugMode) {
+      print(data);
+    }
     objectsDist.clear();
     if (data[0] == 0xfd) {
       int objsz = data[1];
@@ -165,9 +175,13 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
 
       }
     }
-    print(objectsDist);
+    if (kDebugMode) {
+      print(objectsDist);
+    }
     if ((data[0] == 0xfd) && (data[1] == objectsDist.length)) {
-      print("displaying objects");
+      if (kDebugMode) {
+        print("displaying objects");
+      }
       objectsDist.sort();
       led1state = false;
       led2state = false;
@@ -193,22 +207,26 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       }
       // show bike status
       if (objectsDist[0] < 10) {
+        print("state is : danger");
         setState(() {
-          st = "danger";
+          st = BikeIndicatorState.danger;
         });
       } else if (objectsDist[0] < 30) {
+        print("state is : warning");
         setState(() {
-          st = "warning";
+          st = BikeIndicatorState.warning;
         });
       } else {
+        print("state is : safe");
+
         setState(() {
-          st = "safe";
+          st = BikeIndicatorState.safe;
         });
       }
     } else {
       setState(() {
         cars.clear();
-        st = "safe";
+        st = BikeIndicatorState.safe;
       });
     }
 
@@ -222,9 +240,8 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     drawerItems2.addAll(newItems2);
   }
 
-  /**
-   *  serviceUuids: [4fafc201-1fb5-459e-8fcc-c5c9c331914b]}, rssi: -63, timeStamp: 2023-08-16 20:20:11.098165}
-   */
+  ///  serviceUuids: [4fafc201-1fb5-459e-8fcc-c5c9c331914b]}, rssi: -63, timeStamp: 2023-08-16 20:20:11.098165}
+  // ignore: non_constant_identifier_names
   void SelectDevice(String sd, String sda) async {
     print("connecting to $sd $sda *******************");
     await FlutterBluePlus.stopScan();
@@ -245,7 +262,9 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         BluetoothCharacteristic x3;
 
         for (var i in x2) {
-          print("service is ${i.toString()}");
+          if (kDebugMode) {
+            print("service is ${i.toString()}");
+          }
           if (i.serviceUuid.toString() ==
               '4fafc201-1fb5-459e-8fcc-c5c9c331914b') {
             List<BluetoothCharacteristic> mc = i.characteristics;
@@ -256,7 +275,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
                 x3.setNotifyValue(true, timeout: 15);
                 // List<int> ss=await x3.read(timeout: 15);
                 // x3.onValueReceived.listen((event) { print("ss=");print(event);});
-                x3.onValueReceived.listen(Brecieved_callback);
+                x3.onValueReceived.listen(_brecieved_callback);
               }
             }
           }
@@ -283,12 +302,12 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     // myBLT.connect(sda);
   }
 
+  // ignore: non_constant_identifier_names
   void DisconnectDevice(String sd, String sda) async {
     setState(() {
       cars.clear();
       DevName = "";
       DevNo = "";
-      st = "danger";
     });
     BluetoothDevice selectedBLE = BluetoothDevice(
       remoteId: DeviceIdentifier(sda),
@@ -309,7 +328,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
 
             // List<int> ss=await x3.read(timeout: 15);
             // x3.onValueReceived.listen((event) { print("ss=");print(event);});
-            // x3.onValueReceived.listen(Brecieved_callback);
+            // x3.onValueReceived.listen(_brecieved_callback);
           }
         }
       }
@@ -318,14 +337,16 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     setState(() {
       connDevicen = "";
     });
+    // ignore: deprecated_member_use
     await FlutterBluePlus.turnOff();
     await FlutterBluePlus.turnOn(timeout: 50);
     setState(() {
       cars.clear();
-      st = "safe";
+      st = BikeIndicatorState.safe;
     });
   }
 
+  // ignore: non_constant_identifier_names
   void RefreshBluetooth() async {
     // print("hello2");
     setState(() {
@@ -354,6 +375,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
           drawerItems2.clear();
           refrshen = false;
           for (var i in mdevices) {
+            // ignore: deprecated_member_use
             drawerItems.add(i.localName);
             drawerItems2.add(i.remoteId.toString());
           }
@@ -364,8 +386,10 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         if (results.isNotEmpty) {
           ScanResult r = results.last; // the most recently found device
 
-          print(
-              '${r.device.remoteId}: "${r.advertisementData.advName}" found!');
+          if (kDebugMode) {
+            print(
+                '${r.device.remoteId}: "${r.advertisementData.advName}" found!');
+          }
         }
       },
       onError: (e) => print(e),
@@ -374,6 +398,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     await FlutterBluePlus.startScan(timeout: const Duration(seconds: 5));
   }
 
+  // ignore: non_constant_identifier_names
   Widget Battery() {
     return Align(
       alignment: Alignment.topLeft,
@@ -393,9 +418,12 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   }
 
   void pressed() {
-    print("pressed...");
+    if (kDebugMode) {
+      print("pressed...");
+    }
   }
 
+  // ignore: non_constant_identifier_names
   Widget MyAppBar(double space1, double space2, double space3) {
     return Row(
       children: [
@@ -457,6 +485,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   Widget MyFooter(double ht, double wd) {
     return Row(children: [
       Container(
@@ -468,6 +497,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
           icon: Icons.camera_alt,
           size: 60,
           //onPressed:pressed,
+          // ignore: avoid_print
           onPressed: () => {print("aaa2")},
         ),
       ),
@@ -539,6 +569,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   }
 
 // ignore: non_constant_identifier_names
+/*
   Widget _BikeWidget() {
     return Container(
       height: 50, // Adjust the height of the bar as needed
@@ -554,8 +585,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         ),
       ),
     );
-  }
-
+  }*/
   Widget _spedometerWidget(double speed) {
     final String n = speed.toString(); // Change const to final
     return SizedBox(
@@ -563,7 +593,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'Speed: ',
             style: TextStyle(
               color: Colors.white,
@@ -571,23 +601,23 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(width: 5),
+          const SizedBox(width: 5),
           SizedBox(
-            width: 90,
+            width: 120,
             height: 90,
             child: SevenSegmentDisplay(
               value: n,
               size: 4.5,
               characterSpacing: 10.0,
               backgroundColor: Colors.transparent,
-              segmentStyle: HexSegmentStyle(
+              segmentStyle: const HexSegmentStyle(
                 enabledColor: Colors.white,
                 disabledColor: Color.fromARGB(255, 82, 81, 81),
               ),
             ),
           ),
-          SizedBox(width: 5), // Add spacing between LED digits and units
-          Text(
+          const SizedBox(width: 15), // Add spacing between LED digits and units
+          const Text(
             'km/h',
             style: TextStyle(
               color: Colors.white,
@@ -791,11 +821,16 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     );
   }
 
+  Widget getBikeIndicator() {
+    return BikeIndicator(status: st);
+  }
+
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool DrawerState = false;
   @override
   Widget build(BuildContext context) {
-    CustomDrawer DevicesDrawer = CustomDrawer(
+    // ignore: non_constant_identifier_names
+    CustomDrawer devicesDrawer = CustomDrawer(
       items: drawerItems,
       items_description: drawerItems2,
       selectedSetter: SelectDevice,
@@ -810,6 +845,9 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     double screenWidth = screenSize.width;
     double screenHeight = screenSize.height;
     bool isDrawerOpen = scaffoldKey.currentState?.isDrawerOpen ?? false;
+/*     setState(() {
+      st = ;
+    }); */
     return Stack(
       children: [
         Scaffold(
@@ -820,7 +858,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
               Column(
                 children: [
                   const SizedBox(height: 5),
-                  BikeIndicator(state: st),
+                  BikeIndicator(status: st),
                   const SizedBox(
                       height:
                           24), // Add spacing between the bar and the LED digits
@@ -850,7 +888,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
             ],
           ),
           backgroundColor: Colors.grey[800],
-          drawer: DevicesDrawer,
+          drawer: devicesDrawer,
         ),
         Row(
           children: [
