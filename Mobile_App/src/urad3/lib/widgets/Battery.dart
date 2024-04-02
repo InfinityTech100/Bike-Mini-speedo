@@ -38,7 +38,7 @@ class BatteryLevelWidget extends StatelessWidget {
           left: 3,
           child: Container(
             margin: const EdgeInsets.only(top: 5),
-            width: (frameWidth - 12) * batteryLevel,
+            width: (frameWidth - 10) * batteryLevel,
             height: frameHeight - 10,
             color: (batteryLevel > 0.75)
                 ? Colors.green

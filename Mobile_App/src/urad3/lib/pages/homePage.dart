@@ -195,11 +195,11 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         print("Distance debugg******************");*/
         if ((distance) <= 30) {
           led1state = true;
-        } else if ((distance) >= 31 && distance <= 60) {
+        } else if ((distance) >= 31 && (distance) <= 60) {
           led2state = true;
-        } else if ((distance) >= 61 && distance <= 90) {
+        } else if ((distance) >= 61 && (distance) <= 90) {
           led3state = true;
-        } else if ((distance) >= 91 && distance <= 120) {
+        } else if ((distance) >= 91 && (distance) <= 120) {
           led4state = true;
         } else {
           led5state = true;
@@ -533,8 +533,8 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         padding: const EdgeInsets.only(left: 15, top: 15),
         child: SizedBox(
           child: BatteryLevelWidget(
-            batteryLevel: .1,
-            frameHeight: 30,
+            batteryLevel: .5,
+            frameHeight: 25,
             frameWidth: 45,
           ),
         ),
@@ -590,7 +590,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
             'Speed: ',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -614,7 +614,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
             'km/h',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -673,7 +673,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
               });
             },
             child: Text(
-              'DAY',
+              '  DAY',
               style: TextStyle(
                 color: dayButtonColor,
                 fontSize: 20,
@@ -696,7 +696,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
               });
             },
             child: Text(
-              'OFF',
+              '  OFF',
               style: TextStyle(
                 color: offButtonColor,
                 fontSize: 20,
@@ -728,7 +728,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   Widget ledElement(
       double screenHeight, double screenWidth, Color color, String text) {
     double circleSize =
-        screenWidth / 4.7; // Adjust as needed for the circle size
+        screenWidth / 5.5; // Adjust as needed for the circle size
     return Row(
       children: [
         Container(
@@ -866,6 +866,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
                 children: [
                   SizedBox(
                     height: screenHeight / 2.3,
+                    width: screenWidth / 3.8,
                   ),
                   IconButton(
                       onPressed: () {
@@ -873,7 +874,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
                         scaffoldKey.currentState?.openDrawer();
                         setState(() {});
                       },
-                      icon: const Icon(Icons.search))
+                      icon: const Icon(Icons.bluetooth))
                 ],
               )
             ],
