@@ -12,10 +12,9 @@ class CustomDrawer extends StatelessWidget {
   final String connectedDevice;
   final Function onDiscnnct;
   final double spd;
-  int idx=0;
+  int idx = 0;
   CustomDrawer(
-      {
-      required this.items,
+      {required this.items,
       required this.items_description,
       required this.selectedSetter,
       required this.rfrsh,
@@ -23,7 +22,8 @@ class CustomDrawer extends StatelessWidget {
       required this.onDiscnnct,
       required this.first,
       required this.spd,
-      required this.setItems}) {
+      required this.setItems,
+      color}) {
     // rfrsh();
   }
 
@@ -69,7 +69,7 @@ class CustomDrawer extends StatelessWidget {
                   child: IconButton(
                     icon: const Icon(Icons.connect_without_contact),
                     onPressed: () {
-                      onDiscnnct(items[idx],items_description[idx]);
+                      onDiscnnct(items[idx], items_description[idx]);
                     },
                   ),
                 ),
@@ -111,12 +111,10 @@ class CustomDrawer extends StatelessWidget {
                                   print('Selected item: ${items[index]}');
                                   selectedSetter(
                                       items[index], items_description[index]);
-                                      idx=index;
+                                  idx = index;
                                   Navigator.pop(context);
                                 },
                               ),
-
-
                             ],
                           );
                         },
@@ -140,7 +138,6 @@ class CustomDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
             )
-
           ],
         ),
       ),

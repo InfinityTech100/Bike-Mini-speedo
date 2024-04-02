@@ -6,15 +6,17 @@ class BatteryLevelWidget extends StatelessWidget {
   final double frameWidth;
   final double frameHeight;
 
-
   BatteryLevelWidget({
+    Key? key,
     required this.batteryLevel,
     required this.frameWidth,
     required this.frameHeight,
-  });
-  void setLevel(double lvl)
-  {
-    batteryLevel=lvl;
+  }) : super(key: key);
+  void setLevel(double lvl) {
+    batteryLevel = lvl;
+    if (lvl > 1) {
+      batteryLevel = 1;
+    }
   }
 
   @override
@@ -25,7 +27,7 @@ class BatteryLevelWidget extends StatelessWidget {
         SizedBox(
           width: frameWidth,
           height: frameHeight,
-          child:   Image.asset(
+          child: Image.asset(
             'assets/images/empty-battery.png',
             fit: BoxFit.fill,
           ),
@@ -33,13 +35,16 @@ class BatteryLevelWidget extends StatelessWidget {
 
         //Rectangle for battery level
         Positioned(
-          left: 4,
-          //bottom: 4,
+          left: 3,
           child: Container(
             margin: const EdgeInsets.only(top: 5),
             width: (frameWidth - 12) * batteryLevel,
-            height: frameHeight-10 ,
-            color:(batteryLevel>0.75)? Colors.green : (batteryLevel>0.40)?Colors.orange:Colors.red ,
+            height: frameHeight - 10,
+            color: (batteryLevel > 0.75)
+                ? Colors.green
+                : (batteryLevel > 0.40)
+                    ? Colors.orange
+                    : Colors.red,
           ),
         ),
       ],

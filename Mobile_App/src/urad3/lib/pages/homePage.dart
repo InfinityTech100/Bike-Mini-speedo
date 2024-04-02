@@ -143,7 +143,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       setState(() {
         mySpeed = _currentLocation.speed;
       });
-    
+
       print(mySpeed);
     });
     /* timer2 = Timer.periodic(Duration(milliseconds: 10000), (Timer timer) {}); */
@@ -528,6 +528,17 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
 // ignore: non_constant_identifier_names
   PreferredSizeWidget _Urad3AppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 15, top: 15),
+        child: SizedBox(
+          child: BatteryLevelWidget(
+            batteryLevel: .1,
+            frameHeight: 30,
+            frameWidth: 45,
+          ),
+        ),
+      ),
       //leading:
       actions: [
         IconButton(
@@ -568,24 +579,6 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     );
   }
 
-// ignore: non_constant_identifier_names
-/*
-  Widget _BikeWidget() {
-    return Container(
-      height: 50, // Adjust the height of the bar as needed
-      color: const Color.fromARGB(
-          255, 85, 183, 112), // Set the background color of the bar
-      child: Center(
-        child: SvgPicture.asset(
-          'assets/icons/cycling.svg',
-          height: 30,
-          width: 35,
-          // ignore: deprecated_member_use
-          color: Colors.white, // Set the color of the icon
-        ),
-      ),
-    );
-  }*/
   Widget _spedometerWidget(double speed) {
     final String n = speed.toString(); // Change const to final
     return SizedBox(
@@ -840,14 +833,12 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       spd: dbgMsg,
       onDiscnnct: DisconnectDevice,
       setItems: setDrawerItems,
+      color: Colors.grey,
     );
     Size screenSize = MediaQuery.of(context).size;
     double screenWidth = screenSize.width;
     double screenHeight = screenSize.height;
     bool isDrawerOpen = scaffoldKey.currentState?.isDrawerOpen ?? false;
-/*     setState(() {
-      st = ;
-    }); */
     return Stack(
       children: [
         Scaffold(
@@ -888,39 +879,25 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
             ],
           ),
           backgroundColor: Colors.grey[800],
+          drawerEnableOpenDragGesture: false,
           drawer: devicesDrawer,
         ),
-        Row(
+      ],
+    );
+  }
+}
+        /*Row(
           children: [
             (!isDrawerOpen)
                 ? Container(
                     //  width: 50,
-                    margin: const EdgeInsets.only(left: 15, top: 55),
+                    margin: const EdgeInsets.only(left: 15, top: 40),
                     child: BatteryLevelWidget(
                       batteryLevel: 1.0,
                       frameHeight: 30,
                       frameWidth: 60,
                     ),
                   )
-                : Container(),
+                : Container()
           ],
-        ),
-      ],
-    );
-  }
-}
-//  vLines(),
-/*   Column(
-              children: [
-                const SizedBox(height: 40), // Add spacing
-                MyAppBar(space1, space2, space3),
-                SizedBox(
-                  height: (sh > 600) ? ((sh / 24)) : ((sh / 18) - 30),
-                ), // Add spacing
-                BikeIndicator(state: st),
-                Stack(
-                  children: cars,
-                )
-              ],
-            ), */
-//  MyFooter(sh, sw),
+        ),*/

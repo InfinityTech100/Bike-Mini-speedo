@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Bike Mini speedo\\Mobile_App\\src\\urad3\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\Bike Mini speedo\\Mobile_App\\src\\urad3\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
