@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -60,6 +61,7 @@ class CenteredTextPage extends StatefulWidget {
 
 class _CenteredTextPageState extends State<CenteredTextPage> {
   // String SDeviceA = "";
+  late int currentMode; // Initialize with the default mode
   double? mySpeed = 0;
   double sw = 0;
   double sh = 0;
@@ -149,12 +151,15 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     /* timer2 = Timer.periodic(Duration(milliseconds: 10000), (Timer timer) {}); */
   }
 
+  // ignore: non_constant_identifier_names
   void _brecieved_callback(List<int> data) {
     double? mySpeed = 0;
     try {
       mySpeed = _currentLocation.speed;
     } catch (e) {
-      print("failed to get device speed ,maybe un initialized .!");
+      if (kDebugMode) {
+        print("failed to get device speed ,maybe un initialized .!");
+      }
     }
     //double? mySpeed =10; //for dbg purpose
     setState(() {
@@ -207,17 +212,23 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
       }
       // show bike status
       if (objectsDist[0] < 10) {
-        print("state is : danger");
+        if (kDebugMode) {
+          print("state is : danger");
+        }
         setState(() {
           st = BikeIndicatorState.danger;
         });
       } else if (objectsDist[0] < 30) {
-        print("state is : warning");
+        if (kDebugMode) {
+          print("state is : warning");
+        }
         setState(() {
           st = BikeIndicatorState.warning;
         });
       } else {
-        print("state is : safe");
+        if (kDebugMode) {
+          print("state is : safe");
+        }
 
         setState(() {
           st = BikeIndicatorState.safe;
@@ -241,6 +252,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   }
 
   ///  serviceUuids: [4fafc201-1fb5-459e-8fcc-c5c9c331914b]}, rssi: -63, timeStamp: 2023-08-16 20:20:11.098165}
+
   // ignore: non_constant_identifier_names
   void SelectDevice(String sd, String sda) async {
     print("connecting to $sd $sda *******************");
@@ -260,7 +272,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         });
         var x2 = await selectedBLE.discoverServices(timeout: 15);
         BluetoothCharacteristic x3;
-
+        BluetoothCharacteristic x4;
         for (var i in x2) {
           if (kDebugMode) {
             print("service is ${i.toString()}");
@@ -276,6 +288,18 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
                 // List<int> ss=await x3.read(timeout: 15);
                 // x3.onValueReceived.listen((event) { print("ss=");print(event);});
                 x3.onValueReceived.listen(_brecieved_callback);
+              }
+              if (j.characteristicUuid.toString() ==
+                  'beb5483e-36e1-4688-b7f5-ea07361b26a9') {
+                x4 = j;
+                // Handle data transmission for this characteristic
+                try {
+                  // Send two bytes: 0x46 and currentMode
+                  List<int> data = [0x46, currentMode];
+                  await x4.write(data);
+                } catch (e) {
+                  print("Failed to send data: $e");
+                }
               }
             }
           }
@@ -312,13 +336,13 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     BluetoothDevice selectedBLE = BluetoothDevice(
       remoteId: DeviceIdentifier(sda),
     );
-
     var x2 = await selectedBLE.discoverServices(timeout: 15);
     BluetoothCharacteristic x3;
-
     for (var i in x2) {
       if (i.serviceUuid.toString() == '4fafc201-1fb5-459e-8fcc-c5c9c331914b') {
-        print("object");
+        if (kDebugMode) {
+          print("object");
+        }
         List<BluetoothCharacteristic> mc = i.characteristics;
         for (var j in mc) {
           if (j.characteristicUuid.toString() ==
@@ -625,7 +649,6 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
 
   Widget _leftSideWidget(double screenHeight, double screenWidth) {
     // Local variables to control button and icon colors
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -648,6 +671,8 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
                 offButtonColor = Colors.grey;
                 iconColor = Colors.green;
               });
+              currentMode = 1;
+              SelectDevice(connDevicen, DevNo);
             },
             child: Text(
               'NIGHT',
@@ -671,6 +696,8 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
                 offButtonColor = Colors.grey;
                 iconColor = Colors.green;
               });
+              currentMode = 2;
+              SelectDevice(connDevicen, DevNo);
             },
             child: Text(
               '  DAY',
@@ -694,6 +721,8 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
                 offButtonColor = Colors.white;
                 iconColor = Colors.grey;
               });
+              currentMode = 3;
+              SelectDevice(connDevicen, DevNo);
             },
             child: Text(
               '  OFF',
