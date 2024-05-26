@@ -90,7 +90,6 @@ int digits[10][8]{
   { 1, 1, 1, 1, 1, 1, 1, 0 },  //dig.8
   { 1, 1, 1, 1, 0, 1, 1, 0 },  //dig.9
 };
-
 // The remote service we wish to connect to.
 static BLEUUID serviceUUID("4fafc201-1fb5-459e-8fcc-c5c9c331914b");
 // The characteristic of the remote service we are interested in.
@@ -109,24 +108,38 @@ static void notifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic, ui
     Serial.print(" ");
   }
   Serial.println();
-  if (length < 3 || pData[0] != MAGIC_WORD) {
+
+  // Validate the frame length and magic word
+  if (length < 4 || pData[0] != MAGIC_WORD) {
     Serial.println("Invalid frame received");
     return;
   }
-  uint8_t numObjects = pData[1];
+
+  // Extract the battery level
+  //uint8_t batteryLevel = pData[1];
+  Serial.print("Battery Level: ");
+  Serial.println(batteryLevel);
+
+  // Extract the number of objects
+  uint8_t numObjects = pData[2];
   Serial.print("Number of objects: ");
   Serial.println(numObjects);
-  size_t bytesToCopy = min(numObjects * 3, FRAME_SIZE - 3);
-  memcpy(Data_Buffer + 3, pData + 2, bytesToCopy);
+
+  // Calculate the bytes to copy based on the number of objects
+  size_t bytesToCopy = min(numObjects * 3, FRAME_SIZE - 4);
+
+  // Copy the data to the buffer starting from the correct position
+  memcpy(Data_Buffer + 4, pData + 3, bytesToCopy);
+
   // Process distance data for each object
   for (int i = 0; i < numObjects; i++) {
-    uint8_t distance = Data_Buffer[3 + i * 3];
-    // Call the function to process distance
-    //processDistance(distance);
+    uint8_t distance = Data_Buffer[4 + i * 3];
     Serial.print("Distance : ");
     Serial.println(distance);
     processDistance(distance);
   }
+
+  // Reset LED states
   LED_1_On = false;
   LED_2_On = false;
   LED_3_On = false;
