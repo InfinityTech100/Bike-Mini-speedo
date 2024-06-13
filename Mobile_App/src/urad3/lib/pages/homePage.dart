@@ -69,7 +69,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   List<String> drawerItems2 = [];
   Timer? timer;
   Timer? timer2;
-  double bat_Level = 0.8;
+  double bat_Level = 1;
   var myBLT;
   List<double> objectsDist = [];
   List<Widget> cars = [];

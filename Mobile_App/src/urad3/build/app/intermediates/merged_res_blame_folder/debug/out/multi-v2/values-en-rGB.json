@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
-                    "source": "/home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/values-en-rGB/values-en-rGB.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2753",
-                        "endColumns": "100",
-                        "endOffsets": "2849"
-                    }
-                },
-                {
-                    "source": "/home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/5b7e2189fe1a02c2c6cc74b5403a7b70/jetified-play-services-base-16.0.1/res/values-en-rGB/values.xml",
+                    "source": "/home/mamdouh/.gradle/caches/transforms-2/files-2.1/8b7c8611119135475402d54cd81c65bd/jetified-play-services-base-16.0.1/res/values-en-rGB/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/dc00a40a2de5edd4dd0f6ef3c1d8eb53/jetified-play-services-basement-16.0.1/res/values-en-rGB/values.xml",
+                    "source": "/home/mamdouh/.gradle/caches/transforms-2/files-2.1/00dfe4f9d2dc9bd097567eb34c1e4688/jetified-play-services-basement-16.0.1/res/values-en-rGB/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,6 +35,23 @@
                         "startOffsets": "1245",
                         "endColumns": "196",
                         "endOffsets": "1437"
+                    }
+                },
+                {
+                    "source": "/home/mamdouh/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/values-en-rGB/values-en-rGB.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2753",
+                        "endColumns": "100",
+                        "endOffsets": "2849"
                     }
                 }
             ]

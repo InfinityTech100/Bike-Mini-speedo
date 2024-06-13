@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class BatteryLevelWidget extends StatelessWidget {
   double batteryLevel;
   final double frameWidth;
@@ -12,6 +11,7 @@ class BatteryLevelWidget extends StatelessWidget {
     required this.frameWidth,
     required this.frameHeight,
   }) : super(key: key);
+
   void setLevel(double lvl) {
     batteryLevel = lvl;
     if (lvl > 1) {
@@ -33,12 +33,12 @@ class BatteryLevelWidget extends StatelessWidget {
           ),
         ),
 
-        //Rectangle for battery level
+        // Rectangle for battery level
         Positioned(
-          left: 3,
+          left: 4,
+          top: 5,
           child: Container(
-            margin: const EdgeInsets.only(top: 5),
-            width: (frameWidth - 10) * batteryLevel,
+            width: (frameWidth - 20) * batteryLevel,
             height: frameHeight - 10,
             color: (batteryLevel > 0.75)
                 ? Colors.green
