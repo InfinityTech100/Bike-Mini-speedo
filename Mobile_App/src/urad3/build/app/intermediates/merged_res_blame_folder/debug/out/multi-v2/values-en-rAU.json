@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "/home/mamdouh/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

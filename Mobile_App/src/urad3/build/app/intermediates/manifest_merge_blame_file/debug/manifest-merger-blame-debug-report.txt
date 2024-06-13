@@ -12,56 +12,56 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/debug/AndroidManifest.xml:6:22-64
+14-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/debug/AndroidManifest.xml:6:22-64
 15    <!--
 16     New Bluetooth permissions in Android 12
 17    https://developer.android.com/about/versions/12/features/bluetooth-permissions
 18    -->
 19    <uses-permission
-19-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:8:5-120
+19-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:8:5-120
 20        android:name="android.permission.BLUETOOTH_SCAN"
-20-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:8:22-70
+20-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:8:22-70
 21        android:usesPermissionFlags="neverForLocation" />
-21-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:8:71-117
+21-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:8:71-117
 22    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- legacy for Android 11 or lower -->
-22-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:9:5-76
-22-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:9:22-73
+22-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:9:5-76
+22-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:9:22-73
 23    <uses-permission
-23-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:12:5-95
+23-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:12:5-95
 24        android:name="android.permission.BLUETOOTH"
-24-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:12:22-65
+24-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:12:22-65
 25        android:maxSdkVersion="30" />
-25-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:12:66-92
+25-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:12:66-92
 26    <uses-permission
-26-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:13:5-101
+26-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:13:5-101
 27        android:name="android.permission.BLUETOOTH_ADMIN"
-27-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:13:22-71
+27-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:13:22-71
 28        android:maxSdkVersion="30" />
-28-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:13:72-98
+28-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:13:72-98
 29    <uses-permission
-29-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:14:5-105
+29-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:14:5-105
 30        android:name="android.permission.ACCESS_FINE_LOCATION"
-30-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:14:22-76
+30-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:14:22-76
 31        android:maxSdkVersion="30" /> <!-- legacy for Android 9 or lower -->
-31-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:14:77-103
+31-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:14:77-103
 32    <uses-permission
-32-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:17:5-108
+32-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:17:5-108
 33        android:name="android.permission.ACCESS_COARSE_LOCATION"
-33-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:17:22-78
+33-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:17:22-78
 34        android:maxSdkVersion="28" />
-34-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:17:79-105
+34-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:17:79-105
 35    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-35-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:19:5-77
-35-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:19:22-74
+35-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:19:5-77
+35-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:19:22-74
 36    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-36-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:20:5-84
-36-->/media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:20:22-82
+36-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:20:5-84
+36-->/home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/android/app/src/main/AndroidManifest.xml:20:22-82
 37
 38    <application
 39        android:name="android.app.Application"
 40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.6.0] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/AndroidManifest.xml:24:18-86
+40-->[androidx.core:core:1.6.0] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/AndroidManifest.xml:24:18-86
 41        android:debuggable="true"
 42        android:icon="@mipmap/ic_launcher"
 43        android:label="urad3" >
@@ -99,44 +99,44 @@
 75            android:value="2" />
 76
 77        <service
-77-->[:location] /media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-15:56
+77-->[:location] /home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-15:56
 78            android:name="com.lyokone.location.FlutterLocationService"
-78-->[:location] /media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-71
+78-->[:location] /home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-71
 79            android:enabled="true"
-79-->[:location] /media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-35
+79-->[:location] /home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-35
 80            android:exported="false"
-80-->[:location] /media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
+80-->[:location] /home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
 81            android:foregroundServiceType="location" />
-81-->[:location] /media/mamdouh-azmi/Data/Bike Mini speedo/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-53
+81-->[:location] /home/mamdouh/Bike-Mini-speedo-mamdouh/Mobile_App/src/urad3/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-53
 82
 83        <uses-library
-83-->[androidx.window:window:1.0.0-beta04] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+83-->[androidx.window:window:1.0.0-beta04] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
 84            android:name="androidx.window.extensions"
-84-->[androidx.window:window:1.0.0-beta04] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+84-->[androidx.window:window:1.0.0-beta04] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
 85            android:required="false" />
-85-->[androidx.window:window:1.0.0-beta04] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+85-->[androidx.window:window:1.0.0-beta04] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
 86        <uses-library
-86-->[androidx.window:window:1.0.0-beta04] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+86-->[androidx.window:window:1.0.0-beta04] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
 87            android:name="androidx.window.sidecar"
-87-->[androidx.window:window:1.0.0-beta04] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+87-->[androidx.window:window:1.0.0-beta04] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
 88            android:required="false" />
-88-->[androidx.window:window:1.0.0-beta04] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+88-->[androidx.window:window:1.0.0-beta04] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
 89
 90        <activity
-90-->[com.google.android.gms:play-services-base:16.0.1] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/5b7e2189fe1a02c2c6cc74b5403a7b70/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
+90-->[com.google.android.gms:play-services-base:16.0.1] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/8b7c8611119135475402d54cd81c65bd/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
 91            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-91-->[com.google.android.gms:play-services-base:16.0.1] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/5b7e2189fe1a02c2c6cc74b5403a7b70/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
+91-->[com.google.android.gms:play-services-base:16.0.1] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/8b7c8611119135475402d54cd81c65bd/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
 92            android:exported="false"
-92-->[com.google.android.gms:play-services-base:16.0.1] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/5b7e2189fe1a02c2c6cc74b5403a7b70/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
+92-->[com.google.android.gms:play-services-base:16.0.1] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/8b7c8611119135475402d54cd81c65bd/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
 93            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-93-->[com.google.android.gms:play-services-base:16.0.1] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/5b7e2189fe1a02c2c6cc74b5403a7b70/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
+93-->[com.google.android.gms:play-services-base:16.0.1] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/8b7c8611119135475402d54cd81c65bd/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
 94
 95        <meta-data
-95-->[com.google.android.gms:play-services-basement:16.0.1] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/dc00a40a2de5edd4dd0f6ef3c1d8eb53/jetified-play-services-basement-16.0.1/AndroidManifest.xml:23:9-25:69
+95-->[com.google.android.gms:play-services-basement:16.0.1] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/00dfe4f9d2dc9bd097567eb34c1e4688/jetified-play-services-basement-16.0.1/AndroidManifest.xml:23:9-25:69
 96            android:name="com.google.android.gms.version"
-96-->[com.google.android.gms:play-services-basement:16.0.1] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/dc00a40a2de5edd4dd0f6ef3c1d8eb53/jetified-play-services-basement-16.0.1/AndroidManifest.xml:24:13-58
+96-->[com.google.android.gms:play-services-basement:16.0.1] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/00dfe4f9d2dc9bd097567eb34c1e4688/jetified-play-services-basement-16.0.1/AndroidManifest.xml:24:13-58
 97            android:value="@integer/google_play_services_version" />
-97-->[com.google.android.gms:play-services-basement:16.0.1] /home/mamdouh-azmi/.gradle/caches/transforms-2/files-2.1/dc00a40a2de5edd4dd0f6ef3c1d8eb53/jetified-play-services-basement-16.0.1/AndroidManifest.xml:25:13-66
+97-->[com.google.android.gms:play-services-basement:16.0.1] /home/mamdouh/.gradle/caches/transforms-2/files-2.1/00dfe4f9d2dc9bd097567eb34c1e4688/jetified-play-services-basement-16.0.1/AndroidManifest.xml:25:13-66
 98    </application>
 99
 100</manifest>

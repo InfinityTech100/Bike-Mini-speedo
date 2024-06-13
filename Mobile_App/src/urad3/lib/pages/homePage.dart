@@ -69,6 +69,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   List<String> drawerItems2 = [];
   Timer? timer;
   Timer? timer2;
+  double bat_Level = 1;
   var myBLT;
   List<double> objectsDist = [];
   List<Widget> cars = [];
@@ -152,16 +153,108 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
   }
 
   // ignore: non_constant_identifier_names
+  // void _brecieved_callback(List<int> data) {
+  //   double? mySpeed = 0;
+  //   try {
+  //     mySpeed = _currentLocation.speed;
+  //   } catch (e) {
+  //     if (kDebugMode) {
+  //       print("failed to get device speed ,maybe un initialized .!");
+  //     }
+  //   }
+  //   //double? mySpeed =10; //for dbg purpose
+  //   setState(() {
+  //     dbgMsg = mySpeed!;
+  //   });
+
+  //   if (kDebugMode) {
+  //     print(data);
+  //   }
+  //   objectsDist.clear();
+  //   if (data[0] == 0xfd) {
+  //     int objsz = data[1];
+  //     for (int i = 0; i < objsz * 3; i = i + 3) {
+  //       if ((data[i + 3] > 0) && (data[i + 4].toDouble() > mySpeed!)) {
+  //         objectsDist.add(data[i + 2].toDouble());
+  //       }
+  //       // objectsDist.add(data[i + 2].toDouble());
+
+  //     }
+  //   }
+  //   if (kDebugMode) {
+  //     print(objectsDist);
+  //   }
+  //   if ((data[0] == 0xfd) && (data[1] == objectsDist.length)) {
+  //     if (kDebugMode) {
+  //       print("displaying objects");
+  //     }
+  //     objectsDist.sort();
+  //     led1state = false;
+  //     led2state = false;
+  //     led3state = false;
+  //     led4state = false;
+  //     led5state = false;
+  //     for (int i = 0; i < objectsDist.length; i++) {
+  //       double distance = objectsDist[i];
+  //       /*print("****************************************");
+  //       print(distance);
+  //       print("Distance debugg******************");*/
+  //       if ((distance) <= 30) {
+  //         led1state = true;
+  //       } else if ((distance) >= 31 && (distance) <= 60) {
+  //         led2state = true;
+  //       } else if ((distance) >= 61 && (distance) <= 90) {
+  //         led3state = true;
+  //       } else if ((distance) >= 91 && (distance) <= 120) {
+  //         led4state = true;
+  //       } else {
+  //         led5state = true;
+  //       }
+  //     }
+  //     // show bike status
+  //     if (objectsDist[0] < 10) {
+  //       if (kDebugMode) {
+  //         print("state is : danger");
+  //       }
+  //       setState(() {
+  //         st = BikeIndicatorState.danger;
+  //       });
+  //     } else if (objectsDist[0] < 30) {
+  //       if (kDebugMode) {
+  //         print("state is : warning");
+  //       }
+  //       setState(() {
+  //         st = BikeIndicatorState.warning;
+  //       });
+  //     } else {
+  //       if (kDebugMode) {
+  //         print("state is : safe");
+  //       }
+
+  //       setState(() {
+  //         st = BikeIndicatorState.safe;
+  //       });
+  //     }
+  //   } else {
+  //     setState(() {
+  //       cars.clear();
+  //       st = BikeIndicatorState.safe;
+  //     });
+  //   }
+
+  //   // print("data" + objectsDist.toString());
+  // }
   void _brecieved_callback(List<int> data) {
     double? mySpeed = 0;
+
     try {
       mySpeed = _currentLocation.speed;
     } catch (e) {
       if (kDebugMode) {
-        print("failed to get device speed ,maybe un initialized .!");
+        print("failed to get device speed, maybe uninitialized.!");
       }
     }
-    //double? mySpeed =10; //for dbg purpose
+
     setState(() {
       dbgMsg = mySpeed!;
     });
@@ -169,67 +262,73 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
     if (kDebugMode) {
       print(data);
     }
+
     objectsDist.clear();
     if (data[0] == 0xfd) {
-      int objsz = data[1];
-      for (int i = 0; i < objsz * 3; i = i + 3) {
-        if ((data[i + 3] > 0) && (data[i + 4].toDouble() > mySpeed!)) {
-          objectsDist.add(data[i + 2].toDouble());
-        }
-        // objectsDist.add(data[i + 2].toDouble());
+      // Check Magic Word
+      bat_Level = ((data[1].toDouble()) / 100); // Save battery level as double
+      int objsz = data[2]; // Number of objects
+      for (int i = 0; i < objsz * 3; i += 3) {
+        double objDist = data[3 + i].toDouble(); // Object distance
+        int objSpeedDir = data[3 + i + 1]; // Object speed direction (unused)
+        double objSpeed = data[3 + i + 2].toDouble(); // Object speed
 
+        if (objSpeed > mySpeed!) {
+          objectsDist.add(objDist);
+        }
       }
     }
+
     if (kDebugMode) {
       print(objectsDist);
     }
-    if ((data[0] == 0xfd) && (data[1] == objectsDist.length)) {
+
+    if ((data[0] == 0xfd) && (data[2] == objectsDist.length)) {
+      // Validate frame
       if (kDebugMode) {
         print("displaying objects");
       }
+
       objectsDist.sort();
       led1state = false;
       led2state = false;
       led3state = false;
       led4state = false;
       led5state = false;
-      for (int i = 0; i < objectsDist.length; i++) {
-        double distance = objectsDist[i];
-        /*print("****************************************");
-        print(distance);
-        print("Distance debugg******************");*/
-        if ((distance) <= 30) {
+
+      for (double distance in objectsDist) {
+        if (distance <= 30) {
           led1state = true;
-        } else if ((distance) >= 31 && (distance) <= 60) {
+        } else if (distance >= 31 && distance <= 60) {
           led2state = true;
-        } else if ((distance) >= 61 && (distance) <= 90) {
+        } else if (distance >= 61 && distance <= 90) {
           led3state = true;
-        } else if ((distance) >= 91 && (distance) <= 120) {
+        } else if (distance >= 91 && distance <= 120) {
           led4state = true;
         } else {
           led5state = true;
         }
       }
-      // show bike status
+
+      // Update bike indicator state based on closest object distance
       if (objectsDist[0] < 10) {
         if (kDebugMode) {
-          print("state is : danger");
+          print("state is: danger");
         }
         setState(() {
           st = BikeIndicatorState.danger;
         });
       } else if (objectsDist[0] < 30) {
         if (kDebugMode) {
-          print("state is : warning");
+          print("state is: warning");
         }
         setState(() {
           st = BikeIndicatorState.warning;
         });
       } else {
         if (kDebugMode) {
-          print("state is : safe");
+          print("state is: safe");
         }
-
         setState(() {
           st = BikeIndicatorState.safe;
         });
@@ -240,8 +339,6 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         st = BikeIndicatorState.safe;
       });
     }
-
-    // print("data" + objectsDist.toString());
   }
 
   void setDrawerItems(List<String> newItems, List<String> newItems2) {
@@ -557,7 +654,7 @@ class _CenteredTextPageState extends State<CenteredTextPage> {
         padding: const EdgeInsets.only(left: 15, top: 15),
         child: SizedBox(
           child: BatteryLevelWidget(
-            batteryLevel: .5,
+            batteryLevel: bat_Level,
             frameHeight: 25,
             frameWidth: 45,
           ),
